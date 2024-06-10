@@ -16,13 +16,14 @@ export default function MenuProfile() {
   const navigate = useNavigate();
   const handleClose = () => {
     setAnchorEl(null);
-    navigate("/login");
+    navigate("/session");
   };
   const Session = useSelector((state: RootState) => state.session.isLogin);
   const dispatch = useDispatch();
   const CloseSession = () => {
     dispatch(Logout());
   };
+  const skinId = useSelector((state: RootState) => state.get_skin.skin_uuid);
 
   return (
     <div>
@@ -37,7 +38,11 @@ export default function MenuProfile() {
           <span className="relative block">
             <img
               alt="profil"
-              src="https://mineskin.eu/avatar/386ca368-55c4-423e-a78a-eddd8e6a9103/100.png"
+              src={
+                Session
+                  ? `https://mineskin.eu/bust/${skinId}/100.png`
+                  : `https://static.vecteezy.com/system/resources/thumbnails/000/495/460/small/22_Profile.jpg`
+              }
               className="mx-auto object-cover rounded-full h-10 w-10 "
             />
           </span>

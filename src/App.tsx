@@ -9,7 +9,7 @@ function App() {
     <Routes location={location} key={location.pathname}>
       <Route path="/home" element={<Home />} />
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<LoginAndProfile />} />
+      <Route path="/session" element={<LoginAndProfile />} />
     </Routes>
   );
 }

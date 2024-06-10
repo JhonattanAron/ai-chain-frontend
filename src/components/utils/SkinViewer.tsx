@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 interface Props {
   skin: string;
 }
@@ -9,7 +7,7 @@ function SkinView3DComponent(props: Props): JSX.Element {
     <img
       id="skin_img"
       className="w-[20vh] h-[40vh]"
-      src={`https://mineskin.eu/armor/body/386ca368-55c4-423e-a78a-eddd8e6a9103/100.png`}
+      src={`https://mineskin.eu/body/${props.skin}/100.png`}
       alt="/"
     />
   );

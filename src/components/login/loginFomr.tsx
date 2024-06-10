@@ -11,7 +11,6 @@ import { Dialog } from "@mui/material";
 
 export default function LoginForm() {
   const dispatch = useDispatch();
-  const [incorrectPass, setIncorrectPass] = useState(false);
   const [noRegister, setNoRegister] = useState(false);
   const [FormData, setFormData] = useState({
     username: "",
@@ -46,14 +45,14 @@ export default function LoginForm() {
       });
       const json = await GetLogin.json();
       const value = parseInt(json.response);
-      if (value === 0) {
-        setIncorrectPass(true);
-        return null;
-      } else if (value === 404) {
-        setNoRegister(true);
-      } else {
+      console.log(value);
+      if (value === 200) {
+        Cookies.set("id", json.uuid);
+        Cookies.set("user", json.user);
         dispatch(Login());
-        Cookies.set("id", json.response);
+        return null;
+      } else {
+        setNoRegister(true);
       }
     } catch (error) {
       console.log(error);
@@ -87,8 +86,8 @@ export default function LoginForm() {
               </div>
               {noRegister ? (
                 <div className="mt-2 text-red-500 flex">
-                  <ExclamationCircleIcon className="w-5 mr-1" /> Usuario No
-                  Registrado
+                  <ExclamationCircleIcon className="w-5 mr-1" /> Credenciales de
+                  Inicio de Session Incorrectas
                 </div>
               ) : (
                 <></>
@@ -110,14 +109,6 @@ export default function LoginForm() {
                   placeholder="Password"
                 />
               </div>
-              {incorrectPass ? (
-                <div className="mt-2 text-red-500 flex">
-                  <ExclamationCircleIcon className="w-5 mr-1" /> Contraseña
-                  Incorrecta
-                </div>
-              ) : (
-                <></>
-              )}
             </div>
             <button
               type="submit"

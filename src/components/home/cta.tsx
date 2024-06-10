@@ -8,7 +8,7 @@ export default function Cta() {
     >
       <div className="z-10 w-full sm:bg-[rgba(255,255,255,0.0)] rounded-xl absolute bottom-0 sm:relative bg-[rgba(0,0,0,0.5)] ">
         <h1 className="sm:text-7xl text-4xl sm:ml-20 ml-5 text-white">
-          AI CHAIN MARKETPLACE
+          ADAPTLEAP MINECRAFT SERVER MOD
         </h1>
         <a
           href="https://www.adaptleap.com/"
@@ -21,7 +21,7 @@ export default function Cta() {
       </div>
       <img
         className="w-[90rem] sm:scale-[1] scale-[3]  overflow-hidden object-cover hover:scale-150 transition duration-500 absolute"
-        src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://cloudfront-us-east-1.images.arcpublishing.com/gruponacion/VNNNVIAZ5ZBY5NMSBN2RNZVA6E.jpeg"
         alt="Gif "
       />
     </a>

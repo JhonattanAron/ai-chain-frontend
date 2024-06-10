@@ -1,12 +1,16 @@
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Homes";
+import LoginAndProfile from "./pages/LoginAndProfile";
 
 function App() {
+  const location = useLocation();
   return (
-    <div>
-      <Home />
-      <div className=" h-[100vh]"></div>
-    </div>
+    <Routes location={location} key={location.pathname}>
+      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<LoginAndProfile />} />
+    </Routes>
   );
 }
 

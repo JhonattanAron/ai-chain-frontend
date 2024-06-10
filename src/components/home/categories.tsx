@@ -1,5 +1,5 @@
 export default function Categories() {
-  const categories: String[] = ["Games", "Art", "Tokens", "etc"];
+  const categories: String[] = ["Items", "Users"];
 
   return (
     <div className="relative w-[95%] z-10  flex mx-auto h-[7vh] bg-transparent rounded-xl shadow-2xl m-10">

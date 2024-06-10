@@ -1,3 +1,4 @@
+import Footer from "../navigation/Footer";
 import NavBar from "../navigation/NavBar";
 
 interface Props {
@@ -9,6 +10,7 @@ export default function Layout(props: Props) {
     <>
       <NavBar />
       <div className="sm:pt-[5vh]">{props.children}</div>
+      <Footer />
     </>
   );
 }

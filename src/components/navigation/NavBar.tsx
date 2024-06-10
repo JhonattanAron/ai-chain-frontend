@@ -5,6 +5,7 @@ import {
   ShoppingBagIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
+import MenuProfile from "../login/MenuProfile";
 
 export default function NavBar() {
   return (
@@ -59,30 +60,22 @@ export default function NavBar() {
                 className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium"
                 href="/#"
               >
-                Gallery
+                Items
               </a>
               <a
                 className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium"
                 href="/#"
               >
-                Content
+                Rangos
               </a>
               <a
                 className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium"
                 href="/#"
               >
-                Contact
+                Shop
               </a>
             </div>
-            <div className="relative flex items-center justify-end  p-1  mr-4 sm:right-auto">
-              <a href="/" className="relative block">
-                <img
-                  alt="profil"
-                  src="https://www.w3schools.com/howto/img_avatar.png"
-                  className="mx-auto object-cover rounded-full h-10 w-10 "
-                />
-              </a>
-            </div>
+            <MenuProfile />
           </div>
         </div>
       </header>

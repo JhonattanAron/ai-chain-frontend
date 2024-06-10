@@ -4,32 +4,9 @@ import Cookies from "js-cookie";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSkinData } from "../../redux/reducers/SkinGet";
 import { AppDispatch, RootState } from "../../store";
+import GroupComponent from "../utils/GroupComponent";
 
 export default function Profile() {
-  const Rangos = {
-    booster: "https://i.ibb.co/G98NZyT/booster.png",
-    admin: "https://i.ibb.co/MNm6rx6/admin.png",
-    builder: "https://i.ibb.co/nbQ3hYG/builder.png",
-    dev: "https://i.ibb.co/mqgBPjV/dev.png",
-    epico: "https://i.ibb.co/r7vYgkj/epico.png",
-    famoso: "https://i.ibb.co/GMPDrBz/famoso.png",
-    helper: "https://i.ibb.co/b6vKbB3/helper.png",
-    heroico: "https://i.ibb.co/hYD7vjP/heroico.png",
-    legendario: "https://i.ibb.co/Kx8q93Y/legendario.png",
-    manager: "https://i.ibb.co/pf1PW8D/manager.png",
-    mod: "https://i.ibb.co/M9w7Pn9/mod.png",
-    mvp: "https://i.ibb.co/Mc05Bg2/mvp.png",
-    mvplus: "https://i.ibb.co/XtHL7Zc/mvplus.png",
-    no_comun: "https://i.ibb.co/BrNM32S/nocomun.png",
-    owner: "https://i.ibb.co/S6kDfLZ/owner.png",
-    raro: "https://i.ibb.co/PwCYgvC/raro.png",
-    streamer: "https://i.ibb.co/rdY9gFP/stream.png",
-    tiktok: "https://i.ibb.co/L1hvsG7/tiktok.png",
-    usuario: "https://i.ibb.co/TK7Z7Hh/usuario.png",
-    vip: "https://i.ibb.co/pvxTcW5/vip.png",
-    vip_plus: "https://i.ibb.co/DMzN7tT/vipplus.png",
-    youtuber: "https://i.ibb.co/6YhyTXF/youtube.png",
-  };
   const UserId = Cookies.get("id") || "";
   const [SkinData, SetSkinData] = useState("steve");
   const dispatch = useDispatch<AppDispatch>();
@@ -64,11 +41,7 @@ export default function Profile() {
         <div className="w-[60vw] flex flex-col items-center text-center m-10">
           <div className="w-full flex justify-between">
             <div className="flex">
-              <img
-                className="text-sm object-contain h-10 mr-5"
-                src={Rangos.dev}
-                alt="rango"
-              />
+              <GroupComponent />
               <h3 className="text-white text-3xl">{username}</h3>
             </div>
             <h2 className="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">

@@ -4,11 +4,14 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { AppDispatch, RootState } from "../../store";
 import { Logout } from "../../redux/reducers/Session";
+import { fetchSkinData } from "../../redux/reducers/SkinGet";
+import Cookies from "js-cookie";
 
 export default function MenuProfile() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const UserId = Cookies.get("id") || " ";
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -19,10 +22,13 @@ export default function MenuProfile() {
     navigate("/session");
   };
   const Session = useSelector((state: RootState) => state.session.isLogin);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const CloseSession = () => {
     dispatch(Logout());
   };
+  React.useEffect(() => {
+    dispatch(fetchSkinData(UserId));
+  });
   const skinId = useSelector((state: RootState) => state.get_skin.skin_uuid);
 
   return (

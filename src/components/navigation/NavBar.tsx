@@ -77,6 +77,12 @@ export default function NavBar() {
               </a>
               <a
                 className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium"
+                href="/mods"
+              >
+                Mods
+              </a>
+              <a
+                className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium"
                 href="/#"
               >
                 Shop

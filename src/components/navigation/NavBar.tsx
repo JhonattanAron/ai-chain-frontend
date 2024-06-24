@@ -1,40 +1,47 @@
 import {
+  ArrowDownIcon,
   BellIcon,
   HomeIcon,
   PlusCircleIcon,
-  ShoppingBagIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import MenuProfile from "../login/MenuProfile";
 
 export default function NavBar() {
+  const liStyleNavSmart =
+    "flex flex-col items-center justify-center text-white";
   return (
     <>
-      <div className="sm:hidden  rounded-xl m-2 bg-[rgba(255,255,255,0.3)] shadow-xl h-[8vh] fixed bottom-0 left-0 right-0 z-10">
+      <div className="sm:hidden  rounded-xl m-2 bg-blue-900 shadow-xl h-[8vh] fixed bottom-0 left-0 right-0 z-10">
         <ul className="flex w-full h-full justify-around items-center p-3">
           <li>
-            <a href="/home">
+            <a className={liStyleNavSmart} href="/home">
               <HomeIcon className="h-6 w-6 text-white" />
+              <span>Home</span>
             </a>
           </li>
           <li>
-            <a href="/home">
-              <ShoppingBagIcon className="h-6 w-6 text-white" />
+            <a className={liStyleNavSmart} href="/mods">
+              <ArrowDownIcon className="h-6 w-6 text-white" />
+              <span>Mods</span>
             </a>
           </li>
           <li>
-            <a href="/home">
+            <a className={liStyleNavSmart} href="/home">
               <PlusCircleIcon className="h-6 w-6 text-white" />
+              <span>Cell</span>
             </a>
           </li>
           <li>
-            <a href="/home">
+            <a className={liStyleNavSmart} href="/home">
               <BellIcon className="h-6 w-6 text-white" />
+              <span>Info</span>
             </a>
           </li>
           <li>
-            <a href="/home">
+            <a className={liStyleNavSmart} href="/home">
               <UserCircleIcon className="h-6 w-6 text-white" />
+              <span>Profile</span>
             </a>
           </li>
         </ul>

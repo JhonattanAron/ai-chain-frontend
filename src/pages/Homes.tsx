@@ -14,7 +14,7 @@ export default function Home() {
             Aqui Consigues Items Unicos
           </span>
         </h2>
-        <div className="flex">
+        <div className="flex flex-wrap">
           <ItemsContainer />
           <ItemsContainer />
         </div>
